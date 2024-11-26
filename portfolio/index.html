@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert - Front End Developer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Dancing+Script&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f0e6;
+            color: #1e3a34;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 95%;
+            height: 95vh;
+            margin: 2.5vh auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+        }
+
+        .menu, .social {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a, .social a {
+            text-decoration: none;
+            color: #1e3a34;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover, .social a:hover {
+            color: #2d6a4f;
+        }
+
+        .content {
+            position: relative;
+            height: calc(95vh - 80px);
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 40px;
+        }
+
+        .big-text {
+            position: absolute;
+            font-size: 6rem;
+            font-weight: bold;
+            color: #2d6a4f;
+            z-index: 2;
+        }
+
+        .front {
+            top: 15%;
+            left: 8%;
+        }
+
+        .end {
+            top: 18%;
+            right: 15%;
+        }
+
+        .developer {
+            bottom: 18%;
+            left: 5%;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .code-symbol {
+            position: absolute;
+            font-size: 5rem;
+            color: #2d6a4f;
+            top: 65%;
+            right: 20%;
+            z-index: 3;
+        }
+
+        .description {
+            position: absolute;
+            top: 45%;
+            right: 3%;
+            max-width: 200px;
+            font-size: 0.9rem;
+            text-align: right;
+            z-index: 3;
+        }
+
+        @media (max-width: 768px) {
+            .menu, .social {
+                display: none;
+            }
+
+            .big-text {
+                font-size: 3rem;
+            }
+
+            .code-symbol {
+                font-size: 2rem;
+                top: 10%;
+                right: 10%;
+            }
+
+            .description {
+                top: 20%;
+                right: 5%;
+                max-width: 150px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">Ritik</div>
+            <div class="menu">
+                <a href="#works">WORKS</a>
+                <a href="#about">ABOUT</a>
+                <a href="#testimonial">TESTIMONIAL</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+            <div class="social">
+                <a href="#facebook">FACEBOOK</a>
+                <a href="#instagram">INSTAGRAM</a>
+                <a href="#twitter">TWITTER</a>
+                <a href="#linkedin">LINKEDIN</a>
+            </div>
+        </nav>
+        <div class="content">
+            <h1 class="title">HI THERE, I'M Ritik</h1>
+            <div class="big-text front">FRONT</div>
+            <div class="big-text end">END</div>
+            <div class="big-text developer">DEVELOPER</div>
+            <div class="image-container">
+                <img src="img/ritik-removebg-pareview-removebg-preview.png" alt="Albert">
+            </div>
+            <div class="code-symbol">&lt;/&gt;</div>
+            <div class="description">I AM A CREATIVE FRONT-END DEVELOPER WITH A STRONG FOCUS ON MOTION AND INTERACTION.</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from('.logo', { opacity: 0, x: -50, duration: 1 });
+            gsap.from('.menu a', { opacity: 0, y: -50, duration: 1, stagger: 0.2 });
+            gsap.from('.social a', { opacity: 0, y: -50, duration: 1, stagger: 0.2 });
+            gsap.from('.title', { opacity: 0, y: 50, duration: 1, delay: 0.5 });
+            gsap.from('.big-text', { opacity: 0, scale: 0.5, duration: 1, stagger: 0.3, delay: 1 });
+            gsap.from('.image-container', { opacity: 0, scale: 0.8, duration: 1, delay: 1.5 });
+            gsap.from('.code-symbol', { opacity: 0, rotate: 360, duration: 1, delay: 2 });
+            gsap.from('.description', { opacity: 0, x: 50, duration: 1, delay: 2.2 });
+        });
+    </script>
+</body>
+</html>
